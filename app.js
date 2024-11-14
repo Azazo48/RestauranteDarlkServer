@@ -24,11 +24,10 @@ app.get("/ordenes", async (req, res) => {
 
 
 //funcion para obtener las ordenes que se mostraran en pago
-app.get("/ordenespago", async (req, res) => {
+app.get('/ordenespago', async (req, res) => {
   const ordenesToPago = await ordenesPago();
   res.status(200).send(ordenesToPago);
 });
-
 
 //funcion para aceptarOrden ordenes y cambiar su estatus en la base de datos CAMPO: "verificado"(creo)
 app.patch("/ordenes/aceptar/:id", async (req, res) => {
