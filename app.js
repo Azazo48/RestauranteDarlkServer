@@ -22,6 +22,12 @@ app.get("/ordenes", async (req, res) => {
     res.status(200).send(ordenesToCocina);
 });
 
+app.get("/", async (req, res) => {
+  console.log("Apoco si")
+  const ordenesToCocina = await ordenesCocina();
+  res.status(200).send(ordenesToCocina);
+});
+
 
 //funcion para obtener las ordenes que se mostraran en pago
 app.get('/ordenespago', async (req, res) => {
